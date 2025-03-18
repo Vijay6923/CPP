@@ -9,7 +9,7 @@ using namespace std;
         for (int i = 1; i < n; i++) {
             fact *= i;
         }
-        int idx = (k - 1) / fact;  // (k - 1) because k is 1-indexed
+        int idx = (k - 1) / fact;  
         char ch = str[idx];
         str.erase(str.begin() + idx);
         ans += ch;
