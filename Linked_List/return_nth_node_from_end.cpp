@@ -16,6 +16,22 @@ void display(Node* head){
         temp=temp->next;
     }
 }
+
+Node* removeNthFromEnd(Node* head, int n) {
+        Node* slow=head;
+        Node* fast =head;
+        for(int i=1;i<=n+1;i++){
+            if(fast==NULL) return head->next;
+            fast=fast->next;
+        }
+        while(fast!=NULL){
+            slow=slow->next;
+            fast=fast->next;
+        }
+        slow->next=slow->next->next;
+        return head;
+}
+
 Node* remove(Node* head ,int n){
     int len=0;
     Node* temp=head;
@@ -51,6 +67,7 @@ int main(){
     Node* head=a;
     head=remove(head,4);
     display(head);
+    removeNthFromEnd(head,3);
 
 
 
