@@ -11,11 +11,11 @@ struct Node {
         next = nullptr;
     }
 };
-
-// Insert at end for testing
 void insertAtEnd(Node*& head, int value) {
     Node* newNode = new Node(value);
+    // condition
     if (!head) {
+        
         head = newNode;
         return;
     }
